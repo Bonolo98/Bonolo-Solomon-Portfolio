@@ -4,6 +4,20 @@ import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, 
 import { ContactFromService } from '../../services/contact-from.service';
 import emailjs from '@emailjs/browser';
 
+interface UiDesigns {
+  id: number;
+  title: string;
+  description?: string;
+  url: string;
+}
+interface WebDevelopment {
+  id: number;
+  title: string;
+  description?: string;
+  url: string;
+}
+
+
 @Component({
   selector: 'app-portfolio',
   standalone: true,
@@ -14,25 +28,47 @@ import emailjs from '@emailjs/browser';
 export class PortfolioComponent implements OnInit {
 
 
+  uiDesigns: UiDesigns[] = [
+
+    {
+      id: 1,
+      title: 'My Portfolio',
+      description: 'This is a Figma Design of this portfolio',
+      url: 'https://www.figma.com/proto/WPwm2NDy1nVNN0S8JFcmiP/My-Portfolio?node-id=340-120&node-type=FRAME&t=tESaUbiCRwXTLUZJ-0&scaling=min-zoom&content-scaling=fixed&page-id=340%3A119&hide-ui=1'
+    },
+    {
+      id: 2,
+      title: 'Note Pad',
+      description: 'This is a Figma Design of a Note Pad app',
+      url: 'https://www.figma.com/proto/TEfywMRtuGVXZlfvMsBp3b/Note-Pad-App-%231?node-id=1-2&node-type=FRAME&t=cyZRpNh7rkGDv8U7-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2&show-proto-sidebar=1'
+    },
+    {
+      id: 1,
+      title: 'My Portfolio',
+      description: 'This is a Figma Design of this portfolio',
+      url: 'https://www.figma.com/proto/WPwm2NDy1nVNN0S8JFcmiP/My-Portfolio?node-id=340-120&node-type=FRAME&t=tESaUbiCRwXTLUZJ-0&scaling=min-zoom&content-scaling=fixed&page-id=340%3A119&hide-ui=1'
+    },
+  ];
+
   isHovered = false;
   animationClass = '';
 
   selectedTab = 'ui-designs';
   contactForm!: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder, private viewPortScroller: ViewportScroller,  private contactService: ContactFromService) { 
+  constructor(private _formBuilder: FormBuilder, private viewPortScroller: ViewportScroller, private contactService: ContactFromService) {
     this.contactForm = this._formBuilder.group({
       firstName: ['', [Validators.required]],
-        lastName: ['', [Validators.required]],
-        to_name: 'Admin',
-        email: ['', [Validators.required, Validators.email]],
-        phoneNumber: ['', [Validators.required]],
-        message: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
+      to_name: 'Admin',
+      email: ['', [Validators.required, Validators.email]],
+      phoneNumber: ['', [Validators.required]],
+      message: ['', [Validators.required]],
     })
   }
 
 
-  ngOnInit(): void {  
+  ngOnInit(): void {
   }
 
   scrollToSection(sectionId: string) {
@@ -40,7 +76,7 @@ export class PortfolioComponent implements OnInit {
   }
 
   uiDesignProjects = [
-    { title: 'UI Design 1', description: 'Description for UI Design 1',  },
+    { title: 'UI Design 1', description: 'https://www.google.com' },
     { title: 'UI Design 2', description: 'Description for UI Design 2' },
     { title: 'UI Design 3', description: 'Description for UI Design 3' },
     { title: 'UI Design 4', description: 'Description for UI Design 4' },
@@ -61,14 +97,14 @@ export class PortfolioComponent implements OnInit {
   }
 
   addAnimation() {
-    this.animationClass = 'animate__animated animate__pulse'; // Set animation class
+    this.animationClass = 'animate__animated animate__pulse';
   }
 
   removeAnimation() {
-    this.animationClass = ''; // Reset animation class to allow replay
+    this.animationClass = '';
   }
 
-  onSubmit(contactForm:any) {
+  onSubmit(contactForm: any) {
     this.contactService.SendMessage(this.contactForm.value).subscribe(response => {
       location.href = 'mailthis.to/confirm';
       console.log(response);
@@ -77,15 +113,13 @@ export class PortfolioComponent implements OnInit {
         console.warn(error.responseText)
         console.log({ error })
       }
-
     )
-
   }
 
 
   async sendEmail() {
     emailjs.init('6wwyiaDZqKtwPMnpr');
-   let response = await  emailjs.send("service_vyu0i99", "template_lvrh4fe", {
+    let response = await emailjs.send("service_vyu0i99", "template_lvrh4fe", {
       first_name: this.contactForm.value.firstName,
       last_name: this.contactForm.value.lastName,
       to_name: this.contactForm.value.to_name,
@@ -96,7 +130,7 @@ export class PortfolioComponent implements OnInit {
 
     console.log('we passed the first part')
 
-    alert ('Message has been sent.'); {
+    alert('Message has been sent.'); {
       this.contactForm.reset();
     }
 

@@ -131,18 +131,19 @@
         <div class="mt-8 md:flex justify-center lg:justify-start">
           <!-- UI Designs Section -->
           <div *ngIf="selectedTab === 'ui-designs'">
-            <div class="flex-col place-items-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-24 lg:gap-8">
-              <div *ngFor="let project of uiDesignProjects" class="bg-gray-100 p-4">
-                <h3 class="font-semibold text-lg">{{ project.title }}</h3>
-                <p class="text-sm text-gray-500">{{ project.description }}</p>
+            <div class="flex-col place-items-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-4">
+              <div *ngFor="let uiDesign of uiDesigns" class="bg-gray-100 p-4 border-2 border-cyan rounded-lg min-h-40">
+                <h3 class="font-semibold text-lg">{{ uiDesign.title }}</h3>
+                <a [href]="uiDesign.url" target="_blank">{{ uiDesign.description }}</a>
+                <!-- <p class="text-sm text-gray-500">{{ project.description }}</p> -->
               </div>
             </div>
           </div>
 
           <!-- Web Development Section -->
           <div *ngIf="selectedTab === 'web-development'">
-            <div class="flex-col place-items-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-24 lg:gap-8">
-              <div *ngFor="let project of webDevProjects" class="bg-gray-100 p-4">
+            <div class="flex-col place-items-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-4">
+              <div *ngFor="let project of webDevProjects" class="bg-gray-100 p-4 border-2 border-cyan rounded-lg min-h-40">
                 <h3 class="font-semibold text-lg">{{ project.title }}</h3>
                 <p class="text-sm text-gray-500">{{ project.description }}</p>
               </div>
