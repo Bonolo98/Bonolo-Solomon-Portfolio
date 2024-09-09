@@ -1,10 +1,11 @@
-# BonoloSolomonPortfolio
+# Bonolo-Solomon-Portfolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.1.
+This project is a User Interface Design and Full Stack Development created by Bonolo Solomon portfolio.
+The project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.1.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
 ## Code scaffolding
 
