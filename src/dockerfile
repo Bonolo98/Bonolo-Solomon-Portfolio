@@ -1,0 +1,21 @@
+FROM node:alpine
+
+WORKDIR /app
+
+#Copy package.json
+COPY package.json package-lock.json
+
+#Install Dependencies
+RUN npm install -g @angular/cli@latest \
+    && npm install
+
+#Copy other files and folder to working directory
+COPY . .
+
+EXPOSE 42
+
+#Build Angular application in PROD mode
+RUN npm run build --prod
+
+CMD ["ng", "serve", "--host", "0.0.0.0"]
+

@@ -1,0 +1,4 @@
+.hover:animate__animated {
+    animation-duration: 0.5s; /* Change the duration */
+    animation-timing-function: ease-in-out; /* Customize timing */
+  }
