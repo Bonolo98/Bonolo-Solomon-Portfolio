@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ContactFromService } from '../../services/contact-from.service';
 import emailjs from '@emailjs/browser';
+import { HttpClient } from '@angular/common/http';
 
 interface UiDesigns {
   id: number;
@@ -44,9 +45,9 @@ export class PortfolioComponent implements OnInit {
     },
     {
       id: 1,
-      title: 'My Portfolio',
-      description: 'This is a Figma Design of this portfolio',
-      url: 'https://www.figma.com/proto/WPwm2NDy1nVNN0S8JFcmiP/My-Portfolio?node-id=340-120&node-type=FRAME&t=tESaUbiCRwXTLUZJ-0&scaling=min-zoom&content-scaling=fixed&page-id=340%3A119&hide-ui=1'
+      title: 'Whatsapp Clone',
+      description: 'This is a Figma Design of a Whatsapp clone app',
+      url: 'https://www.figma.com/proto/1mXwkYw7LifpoFMhQrH61V/Mobile-Messenger-App?node-id=1-2&node-type=FRAME&t=HIpBISPxKTjIOhIG-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2'
     },
   ];
 
@@ -56,7 +57,7 @@ export class PortfolioComponent implements OnInit {
   selectedTab = 'ui-designs';
   contactForm!: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder, private viewPortScroller: ViewportScroller, private contactService: ContactFromService) {
+  constructor(private _formBuilder: FormBuilder, private viewPortScroller: ViewportScroller, private contactService: ContactFromService, private http: HttpClient) {
     this.contactForm = this._formBuilder.group({
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
@@ -133,7 +134,5 @@ export class PortfolioComponent implements OnInit {
     alert('Message has been sent.'); {
       this.contactForm.reset();
     }
-
   }
-
 }

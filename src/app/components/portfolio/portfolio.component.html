@@ -5,6 +5,7 @@
 
     <div class="sm:w-full sm:w-4/5 sm:col-start-1 sm:col-span-8 mt-48 sm:mt-48 lg:mt-64 lg:flex lg:items-start">
       <div>
+        <div class="mb-6 text-center lg:text-start text-2xl sm:text-3xl lg:text-5xl font-prata text-cyan">Hi, I am</div>
         <div class="mb-4 text-center lg:text-start text-3xl sm:text-5xl lg:text-7xl font-prata"
           (click)="scrollToSection('about')" [ngClass]="animationClass" (mouseenter)="addAnimation()"
           (mouseleave)="removeAnimation()">BONOLO <span class="text-cyan"> SOLOMON</span></div>
@@ -15,13 +16,16 @@
           my creativity in a manner that helps makes an impact the modern technological era.</div>
         <div class="space-y-2">
           <div class="flex justify-center lg:justify-start">
-            <button class="bg-black w-64 h-12 rounded-lg border text-white">Projects I've worked on</button>
+            <button class="bg-black w-64 h-12 rounded-lg border text-white" (click)="scrollToSection('projects')">Projects I've worked on</button>
           </div>
           <div class="flex justify-center lg:justify-start">
-            <button class="flex justify-center items-center bg-black w-32 h-12 rounded-lg border text-white">Resume
+            <a href="../../assets/Fullstack Resume_Bonolo_Solomon.pdf">
+            <button class="flex justify-center items-center bg-black w-32 h-12 rounded-lg border text-white">
+              Resume
               <img width="25" height="25" src="https://img.icons8.com/sf-black-filled/64/FFFFFF/downloading-updates.png"
                 alt="downloading-updates" />
             </button>
+          </a>
           </div>
         </div>
       </div>
@@ -69,17 +73,17 @@
 
 
     <div
-      class="mt-20 sm:mt-64 col-span-1 sm:col-start-2 lg:col-start-3 bg-base-100 w-36 sm:w-64 h-52 sm:h-96 rounded-full transform transition duration-700 hover:scale-110">
+      class="bg-cover bg-portrait mt-20 sm:mt-64 col-span-1 sm:col-start-2 lg:col-start-3 bg-base-100 w-36 sm:w-64 h-52 sm:h-96 rounded-full transform transition duration-700 hover:scale-110">
     </div>
 
 
     <div
       class="px-12 sm:px-0 text-center sm:text-start space-y-8 mt-10 sm:mt-64 sm:w-10/12 lg:w-9/12 sm:col-start-7 lg:col-start-6 sm:col-span-6 lg:col-span-7 content-center">
       <div class="mb-6 text-2xl sm:text-3xl lg:text-5xl font-prata text-white">WHO IS BONOLO SOLOMON</div>
-      <div class="sm:text-1xl lg:text-2xl font-semibold text-white">I'm a product designer and frontend developer based
+      <div class="sm:text-1xl lg:text-2xl font-semibold text-white transform transition duration-700 hover:scale-110">I'm a product designer and frontend developer based
         in sunny
         Johannesburg, South Africa.</div>
-      <div class="text-sm text-white">Since 2016, I’ve enjoyed organizing random visual elements into beautiful
+      <div class="text-sm text-white  transform transition duration-700 hover:scale-110">Since 2016, I’ve enjoyed organizing random visual elements into beautiful
         aesthetically pleasing and intuitive designs.
         My introduction to design work was through digital creations such as posters, booklets and brand designs for
         local businesses.
@@ -87,16 +91,22 @@
       </div>
 
       <div class="flex sm:space-x-2 lg:space-x-10 sm:w-2/6">
-        <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/1A1A1A/html-5.png" alt="html-5" />
-        <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/1A1A1A/css3.png" alt="css3" />
+
+        <div id="tooltip-default" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+          Tooltip content
+          <div class="tooltip-arrow" data-popper-arrow></div>
+      </div>
+
+        <img data-tooltip-target="tooltip-default" width="50" height="50" src="https://img.icons8.com/ios-filled/50/1A1A1A/html-5.png" alt="html-5" class="transform transition duration-700 hover:scale-110 " data-tip="HTML"/>
+        <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/1A1A1A/css3.png" alt="css3" class="transform transition duration-700 hover:scale-110" />
         <img width="50" height="50" src="https://img.icons8.com/ios-filled/100/1A1A1A/javascript.png"
-          alt="javascript" />
+          alt="javascript" class="transform transition duration-700 hover:scale-110" />
         <img width="50" height="50"
           src="https://img.icons8.com/external-tal-revivo-bold-tal-revivo/50/1A1A1A/external-angular-a-typescript-based-open-source-web-application-framework-logo-bold-tal-revivo.png"
-          alt="external-angular-a-typescript-based-open-source-web-application-framework-logo-bold-tal-revivo" />
-        <img width="50" height="50" src="https://img.icons8.com/windows/32/1A1A1A/nodejs.png" alt="nodejs" />
+          alt="external-angular-a-typescript-based-open-source-web-application-framework-logo-bold-tal-revivo" class="transform transition duration-700 hover:scale-110" />
+        <img width="50" height="50" src="https://img.icons8.com/windows/32/1A1A1A/nodejs.png" alt="nodejs"  class="transform transition duration-700 hover:scale-110"/>
         <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/1A1A1A/java-coffee-cup-logo--v1.png"
-          alt="java-coffee-cup-logo--v1" />
+          alt="java-coffee-cup-logo--v1" class="transform transition duration-700 hover:scale-110" />
       </div>
     </div>
 
@@ -132,7 +142,7 @@
           <!-- UI Designs Section -->
           <div *ngIf="selectedTab === 'ui-designs'">
             <div class="flex-col place-items-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-4">
-              <div *ngFor="let uiDesign of uiDesigns" class="bg-gray-100 p-4 border-2 border-cyan rounded-lg min-h-40">
+              <div *ngFor="let uiDesign of uiDesigns" class="bg-gray-100 p-4 border-2 border-cyan rounded-lg min-h-40 transform transition duration-700 hover:scale-110">
                 <h3 class="font-semibold text-lg">{{ uiDesign.title }}</h3>
                 <a [href]="uiDesign.url" target="_blank">{{ uiDesign.description }}</a>
                 <!-- <p class="text-sm text-gray-500">{{ project.description }}</p> -->
@@ -143,7 +153,7 @@
           <!-- Web Development Section -->
           <div *ngIf="selectedTab === 'web-development'">
             <div class="flex-col place-items-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-4">
-              <div *ngFor="let project of webDevProjects" class="bg-gray-100 p-4 border-2 border-cyan rounded-lg min-h-40">
+              <div *ngFor="let project of webDevProjects" class="bg-gray-100 p-4 border-2 border-cyan rounded-lg min-h-40 transform transition duration-700 hover:scale-110">
                 <h3 class="font-semibold text-lg">{{ project.title }}</h3>
                 <p class="text-sm text-gray-500">{{ project.description }}</p>
               </div>
@@ -190,7 +200,6 @@
                     type="text" placeholder="Last Name" aria-label="Last Name">
                 </div>
               </div>
-
               </div>
 
               <div class="flex space-x-6">
@@ -202,6 +211,7 @@
                       type="email" placeholder="Email" aria-label="Email">
                   </div>
                 </div>
+
   
                 <div class="form-group">
                   <div class="flex items-center lg:w-full border-b border-white sm:border-black py-2">
@@ -213,13 +223,11 @@
 
 
               </div>
-
-
               <div class="form-group">
-                <div class=" max-w-full space-y-3">
+                <div class=" max-w-full space-y-3 mt-4">
                   <textarea id="message" formControlName="message"
-                    class="form-control placeholder-white sm:placeholder-black py-3 px-0 block w-full bg-transparent border-t-transparent text-white  sm:text-black border-b-2 border-x-transparent border-b-white sm:border-black  text-1xl focus:border-gray focus:border-t-transparent focus:border-x-transparent focus:border-b-blue-500 focus:ring-0 disabled:opacity-50 disabled:pointer-events-none"
-                    rows="3" placeholder="Write your message here."></textarea>
+                    class="form-control placeholder-white sm:placeholder-black py-3 px-0 block w-full bg-transparent border-t-transparent text-white  sm:text-black border-b-1 border-b-white sm:border-black text-1xl focus:border-t-transparent  focus:border-x-transparent border-x-transparent focus:border-cyan  disabled:opacity-50 disabled:pointer-events-none rounded-lg"
+                    rows="3" placeholder=" Write your message here."></textarea>
                 </div>
 
               </div>
@@ -228,8 +236,6 @@
 
 
             <div class="flex justify-between items-center">
-
-
               <div class="visible sm:invisible flex lg:space-x-5 justify-start lg:items-end">
                 <p><a  href="https://github.com/Bonolo98"> 
                   <img width="50" height="50" src="https://img.icons8.com/glyph-neue/64/FFFFFF/github.png" alt="github"/>
@@ -239,8 +245,6 @@
                   <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/linkedin.png" alt="linkedin"/>
                 </a>
                 </div>
-  
-                <!-- <div class="visible sm:invisible flex content-end">© 2024 Bonolo Solomon</div> -->
               </div>
 
 
