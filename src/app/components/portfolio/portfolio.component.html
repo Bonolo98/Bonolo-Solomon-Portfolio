@@ -10,7 +10,7 @@
           (click)="scrollToSection('about')">BONOLO <span class="text-cyan"> SOLOMON</span></div>
         <div class="text-center lg:text-start mb-4 text-sm sm:text-3xl font-semibold text-cyan">UI DESIGNER |
           FULL-STACK DEVELOPER</div>
-        <div class="text-center lg:text-start mb-4 text-sm lg:w-4/6 transform transition duration-700 hover:scale-110">I
+        <div class="text-center lg:text-start mb-4 text-sm lg:w-4/6">I
           am a collaborative
           develop with great interest in design, I love web development for the mere fact that it allows me to express
           my creativity in a manner that helps makes an impact the modern technological era.</div>
@@ -36,12 +36,12 @@
       <div class="lg:flex lg:flex-col lg:space-y-4">
         <div class="flex justify-center sm:col-start-3 col-span-1 mt-10 lg:mt-0 space-y-4">
           <div
-            class="sm:col-start-9 col-span-4 bg-cyan w-32 h-44 sm:w-52 sm:h-80 rounded-full transform transition duration-700 hover:scale-110">
+            class="sm:col-start-9 col-span-4 bg-cyan w-32 h-44 sm:w-52 sm:h-80 rounded-full hover:scale-110">
           </div>
         </div>
         <div class="flex justify-center mt-5 lg:mt-0">
           <div
-            class="sm:col-start-9 col-span-4 bg-cyan w-12 sm:w-20 h-12 sm:h-20 rounded-full transform transition duration-700 hover:scale-110">
+            class="sm:col-start-9 col-span-4 bg-cyan w-12 sm:w-20 h-12 sm:h-20 rounded-full hover:scale-110">
           </div>
         </div>
       </div>
@@ -79,7 +79,7 @@
 
 
     <div
-      class="bg-cover bg-portrait mt-20 sm:mt-64 col-span-1 sm:col-start-2 lg:col-start-3 bg-base-100 w-36 sm:w-64 h-52 sm:h-96 rounded-full transform transition duration-700 hover:scale-110">
+      class="bg-cover bg-portrait mt-20 sm:mt-64 col-span-1 sm:col-start-2 lg:col-start-3 bg-base-100 w-36 sm:w-64 h-52 sm:h-96 rounded-full">
     </div>
 
 
@@ -148,27 +148,27 @@
 
         <img data-tooltip-target="tooltip-html" data-tooltip-placement="bottom" width="50" height="50"
           src="https://img.icons8.com/ios-filled/50/FFFFFF/html-5--v1.png" alt="html-5--v1"
-          class="transform transition duration-700" data-tip="HTML" />
+          class="" data-tip="HTML" />
 
         <img data-tooltip-target="tooltip-css" data-tooltip-placement="bottom" width="50" height="50"
         src="https://img.icons8.com/ios-filled/50/FFFFFF/css3.png" alt="css3"
-          class="transform transition duration-700" />
+          class="" />
 
         <img data-tooltip-target="tooltip-javascript" data-tooltip-placement="bottom" width="50" height="50"
         src="https://img.icons8.com/ios-filled/50/FFFFFF/javascript.png" alt="javascript"
-          class="transform transition duration-700" />
+          class="" />
 
         <img data-tooltip-target="tooltip-angular" data-tooltip-placement="bottom" width="50" height="50"
         src="https://img.icons8.com/ios-filled/50/FFFFFF/angularjs.png" alt="angularjs"
-          class="transform transition duration-700" />
+          class="" />
 
         <img data-tooltip-target="tooltip-nodejs" data-tooltip-placement="bottom" width="50" height="50"
         src="https://img.icons8.com/windows/32/FFFFFF/node-js.png" alt="node-js"
-          class="transform transition duration-700 flex-shrink-0" />
+          class="flex-shrink-0" />
 
         <img data-tooltip-target="tooltip-java" data-tooltip-placement="bottom" width="50" height="50"
         src="https://img.icons8.com/ios/50/FFFFFF/java-coffee-cup-logo.png" alt="java-coffee-cup-logo"
-          class="transform transition duration-700" />
+          class="" />
 
           <span class="" style="color: #ffffff;" data-tooltip-target="tooltip-springboot" data-tooltip-placement="bottom">
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path fill="#ffffff" d="m23.693 10.706l-4.73-8.185c-.41-.71-1.417-1.294-2.24-1.294h-9.45c-.82 0-1.831.584-2.24 1.294L.306 10.706c-.41.71-.41 1.873 0 2.584l4.725 8.189c.41.71 1.417 1.294 2.24 1.294h9.455c.82 0 1.826-.584 2.24-1.294l4.726-8.19c.41-.71.41-1.873 0-2.583zM10.976 5.755c0-.537.438-.975.974-.975s.975.438.975.975v5.821a.976.976 0 0 1-1.948 0zm.974 12.43a6.616 6.616 0 0 1-6.607-6.609A6.64 6.64 0 0 1 8.01 6.272a.866.866 0 0 1 1.214.18a.866.866 0 0 1-.178 1.213a4.876 4.876 0 0 0 5.812 7.827a4.88 4.88 0 0 0 1.967-3.916a4.9 4.9 0 0 0-1.986-3.925a.87.87 0 0 1-.183-1.214a.87.87 0 0 1 1.214-.183a6.63 6.63 0 0 1 2.687 5.322a6.613 6.613 0 0 1-6.608 6.608"/></svg>
@@ -209,7 +209,7 @@
           <div *ngIf="selectedTab === 'ui-designs'">
             <div class="flex-col place-items-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-4">
               <div *ngFor="let uiDesign of uiDesigns"
-                class="bg-gray-100 p-4 border-2 border-cyan rounded-lg min-h-40 transform transition duration-700 hover:scale-110">
+                class="bg-gray-100 p-4 border-2 border-cyan rounded-lg min-h-40">
                 <h3 class="font-semibold text-lg">{{ uiDesign.title }}</h3>
                 <a [href]="uiDesign.url" target="_blank">{{ uiDesign.description }}</a>
                 <!-- <p class="text-sm text-gray-500">{{ project.description }}</p> -->
@@ -221,7 +221,7 @@
           <div *ngIf="selectedTab === 'web-development'">
             <div class="flex-col place-items-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-4">
               <div *ngFor="let web of webDevelopment"
-                class="bg-gray-100 p-4 border-2 border-cyan rounded-lg min-h-40 transform transition duration-700 hover:scale-110">
+                class="bg-gray-100 p-4 border-2 border-cyan rounded-lg min-h-40">
                 <h3 class="font-semibold text-lg">{{ web.title }}</h3>
                 <a [href]="web.url" target="_blank" class="text-sm text-gray-500">{{ web.description }}</a>
               </div>
