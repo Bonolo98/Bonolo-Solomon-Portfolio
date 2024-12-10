@@ -50,6 +50,31 @@ export class PortfolioComponent implements OnInit {
       url: 'https://www.figma.com/proto/1mXwkYw7LifpoFMhQrH61V/Mobile-Messenger-App?node-id=1-2&node-type=FRAME&t=HIpBISPxKTjIOhIG-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2'
     },
   ];
+  
+
+  webDevelopment: WebDevelopment[] = [
+
+    {
+      id: 1,
+      title: 'Calculator',
+      description: 'This is a Simple Calculator Design',
+      url: 'https://calculatorsv3.netlify.app/'
+    },
+    // {
+    //   id: 2,
+    //   title: 'Note Pad',
+    //   description: 'This is a Figma Design of a Note Pad app',
+    //   url: 'https://www.figma.com/proto/TEfywMRtuGVXZlfvMsBp3b/Note-Pad-App-%231?node-id=1-2&node-type=FRAME&t=cyZRpNh7rkGDv8U7-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2&show-proto-sidebar=1'
+    // },
+    // {
+    //   id: 1,
+    //   title: 'Whatsapp Clone',
+    //   description: 'This is a Figma Design of a Whatsapp clone app',
+    //   url: 'https://www.figma.com/proto/1mXwkYw7LifpoFMhQrH61V/Mobile-Messenger-App?node-id=1-2&node-type=FRAME&t=HIpBISPxKTjIOhIG-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2'
+    // },
+  ];
+
+
 
   isHovered = false;
   animationClass = '';
@@ -59,11 +84,11 @@ export class PortfolioComponent implements OnInit {
 
   constructor(private _formBuilder: FormBuilder, private viewPortScroller: ViewportScroller, private contactService: ContactFromService, private http: HttpClient) {
     this.contactForm = this._formBuilder.group({
-      firstName: ['', [Validators.required]],
-      lastName: ['', [Validators.required]],
+      firstName: ['', [Validators.required, Validators.minLength(3)]],
+      lastName: ['', [Validators.required, Validators.minLength(3)]],
       to_name: 'Admin',
       email: ['', [Validators.required, Validators.email]],
-      phoneNumber: ['', [Validators.required]],
+      phoneNumber: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(10), Validators.maxLength(10)]],
       message: ['', [Validators.required]],
     })
   }
@@ -86,10 +111,10 @@ export class PortfolioComponent implements OnInit {
   ];
 
   webDevProjects = [
-    { title: 'Web Dev Project 1', description: 'Description for Web Dev Project 1' },
-    { title: 'Web Dev Project 2', description: 'Description for Web Dev Project 2' },
-    { title: 'Web Dev Project 3', description: 'Description for Web Dev Project 3' },
-    { title: 'Web Dev Project 4', description: 'Description for Web Dev Project 4' },
+    { title: 'Calculator', description: 'This is a Simple Calculator Design' },
+    { title: '', description: '' },
+    { title: '', description: '' },
+    { title: '', description: '' },
     // Add more projects as needed
   ];
 
